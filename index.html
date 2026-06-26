@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIG E COOKIES | Luxury Cookie Boxes</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <!-- AOS animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --gold: #c9a96e;
+      --dark: #2c2420;
+      --cream: #faf7f2;
+      --card-bg: #ffffff;
+      --text-dark: #3e3a37;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .hero-title, .card-title, .modal-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .hero {
+      background: linear-gradient(rgba(44, 36, 32, 0.65), rgba(44, 36, 32, 0.55)),
+                  url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=1200&auto=format&fit=crop') center/cover no-repeat;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-top: 0;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #faf3e8;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin: 1rem 0 2rem;
+      letter-spacing: 2px;
+      color: #f0e6d3;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      border: none;
+      color: var(--dark);
+      font-weight: 600;
+      padding: 0.8rem 2.5rem;
+      border-radius: 50px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(201,169,110,0.4);
+    }
+
+    .btn-gold:hover {
+      background: #b8944c;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0.5rem auto 1rem;
+    }
+
+    .flavor-card {
+      background: var(--card-bg);
+      border: none;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .flavor-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .flavor-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .flavor-card .card-body {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .flavor-card .card-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .flavor-card .card-text {
+      color: #6b625a;
+      font-size: 0.95rem;
+    }
+
+    .pricing-card {
+      background: var(--card-bg);
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 1rem 0;
+    }
+
+    .price small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #7b6e5e;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-outline-gold {
+      border: 2px solid var(--gold);
+      color: var(--dark);
+      background: transparent;
+      font-weight: 600;
+      border-radius: 30px;
+      padding: 0.6rem 2rem;
+      transition: all 0.3s;
+    }
+
+    .btn-outline-gold:hover {
+      background: var(--gold);
+      color: white;
+    }
+
+    .form-check-input:checked {
+      background-color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .modal-content {
+      border-radius: 25px;
+      border: none;
+      background: #fffcf7;
+    }
+
+    .selected-flavors-summary {
+      min-height: 50px;
+      padding: 0.5rem;
+      border-radius: 12px;
+      background: #faf6ef;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #cbb592;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .footer-phone {
+      color: #cbb592;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .footer-phone:hover {
+      color: var(--gold);
+    }
+
+    .social-icon {
+      font-size: 2rem;
+      color: #cbb592;
+      margin: 0 0.8rem;
+      transition: color 0.3s, transform 0.3s;
+      display: inline-block;
+    }
+
+    .social-icon:hover {
+      color: var(--gold);
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.5rem; }
+      .section-title { font-size: 2.2rem; }
+    }
+
+    @media (max-width: 400px) {
+      .footer-phone {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      .social-icon {
+        margin: 0 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-down">
+      <h1 class="hero-title">BIG E COOKIES</h1>
+      <p class="hero-subtitle">LUXURY HOMEMADE COOKIES · LEBANON</p>
+      <a href="#flavors" class="btn btn-gold">Discover Our Flavours</a>
+    </div>
+  </section>
+
+  <!-- FLAVOUR SHOWCASE -->
+  <section id="flavors" class="container my-5 py-5">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="section-title">Our Flavours</h2>
+      <p class="text-muted">Handpicked premium ingredients, baked with love</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Pistachio -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="flavor-card">
+          <img src="images/pistachio.jpg" alt="Pistachio Cookie Box" />
+          <div class="card-body">
+            <h5 class="card-title">Pistachio</h5>
+            <p class="card-text">Rich, nutty, and irresistibly crunchy.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Lotus -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="flavor-card">
+          <img src="images/lotus.jpg" alt="Lotus Cookie Box" />
+          <div class="card-body">
+            <h5 class="card-title">Lotus</h5>
+            <p class="card-text">Caramelised biscuit magic in every bite.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Kinder -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="flavor-card">
+          <img src="images/kinder.jpg" alt="Kinder Cookie Box" />
+          <div class="card-body">
+            <h5 class="card-title">Kinder</h5>
+            <p class="card-text">Smooth milk chocolate and creamy filling.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Nutella -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+        <div class="flavor-card">
+          <img src="images/nutella.jpg" alt="Nutella Cookie Box" />
+          <div class="card-body">
+            <h5 class="card-title">Nutella</h5>
+            <p class="card-text">World-famous hazelnut spread, baked inside.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Galaxy Chocolate -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="flavor-card">
+          <img src="images/galaxy.jpg" alt="Galaxy Chocolate Cookie Box" />
+          <div class="card-body">
+            <h5 class="card-title">Galaxy Chocolate</h5>
+            <p class="card-text">Silky, smooth chocolate that melts hearts.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Marshmallows -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
+        <div class="flavor-card">
+          <img src="images/marshmallow.jpg" alt="Marshmallow Cookie Box" />
+          <div class="card-body">
+            <h5 class="card-title">Marshmallows</h5>
+            <p class="card-text">Soft, gooey clouds tucked into our dough.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Flio -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="flavor-card">
+          <img src="images/flio.jpg" alt="Flio Cookie Box" />
+          <div class="card-body">
+            <h5 class="card-title">Flio</h5>
+            <p class="card-text">Light, crispy wafers with a creamy hazelnut heart.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Snickers -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="450">
+        <div class="flavor-card">
+          <img src="images/snickers.jpg" alt="Snickers Cookie Box" />
+          <div class="card-body">
+            <h5 class="card-title">Snickers</h5>
+            <p class="card-text">Loaded with peanuts, caramel, and milk chocolate chunks.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Kit Kat -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="flavor-card">
+          <img src="images/kitkat.jpg" alt="Kit Kat Cookie Box" />
+          <div class="card-body">
+            <h5 class="card-title">Kit Kat</h5>
+            <p class="card-text">Crispy wafer pieces folded into a break‑apart cookie.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Big E Cookies & Cream -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="550">
+        <div class="flavor-card">
+          <img src="images/cookiesandcream.jpg" alt="Big E Cookies & Cream Box" />
+          <div class="card-body">
+            <h5 class="card-title">Big E Cookies &amp; Cream</h5>
+            <p class="card-text">Our signature cookie blended with chunks of chocolate cream.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Vanilla Crunch -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="flavor-card">
+          <img src="images/vanillacrunch.jpg" alt="Vanilla Crunch Cookie Box" />
+          <div class="card-body">
+            <h5 class="card-title">Vanilla Crunch</h5>
+            <p class="card-text">Buttery vanilla cookie with a satisfying golden crunch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOX PRICING -->
+  <section id="menu" class="container my-5 py-5">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="section-title">Our Signature Boxes</h2>
+      <p class="text-muted">Mix any flavours you like — every box is custom-made</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-card">
+          <h3 class="card-title">Small Box</h3>
+          <div class="price">$3 <small>USD</small></div>
+          <p class="text-muted">Perfect for a sweet moment</p>
+          <button class="btn btn-outline-gold mt-auto" onclick="openCustomizer('Small Box')">Mix Flavours</button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="pricing-card">
+          <h3 class="card-title">Medium Box</h3>
+          <div class="price">$5 <small>USD</small></div>
+          <p class="text-muted">Share the joy</p>
+          <button class="btn btn-outline-gold mt-auto" onclick="openCustomizer('Medium Box')">Mix Flavours</button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="pricing-card">
+          <h3 class="card-title">Large Box</h3>
+          <div class="price">600,000 <small>LBP</small></div>
+          <p class="text-muted"><strong>Up to 4 flavours</strong></p>
+          <button class="btn btn-outline-gold mt-auto" onclick="openCustomizer('Large Box')">Mix Flavours</button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="pricing-card">
+          <h3 class="card-title">Extra Large Box</h3>
+          <div class="price">$10 <small>USD</small></div>
+          <p class="text-muted"><strong>Up to 5 flavours</strong></p>
+          <button class="btn btn-outline-gold mt-auto" onclick="openCustomizer('Extra Large Box')">Mix Flavours</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIX YOUR BOX MODAL -->
+  <div class="modal fade" id="customizeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Build Your Box</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label fw-bold">Selected Box Size</label>
+            <input type="text" id="selectedSizeDisplay" class="form-control" readonly disabled />
+          </div>
+          <p class="fw-bold mb-2">Choose your flavours:</p>
+          <div id="flavorCheckboxes"></div>
+          <div class="selected-flavors-summary mt-3" id="summaryText">
+            <span class="text-muted">No flavours selected yet</span>
+          </div>
+          <small class="text-muted" id="maxFlavorNote"></small>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-gold" onclick="confirmSelection()">Confirm Selection</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="mb-2" style="font-family: 'Playfair Display', serif; font-size: 1.5rem;">BIG E COOKIES</p>
+      <div class="mb-2">
+        <i class="bi bi-telephone-fill me-2"></i>
+        <a href="tel:+96176118612" class="footer-phone">+961 76 118 612</a>
+      </div>
+      <div class="mb-3">
+        <a href="https://www.instagram.com/big_e_cookies" target="_blank" class="social-icon" aria-label="Instagram">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" class="social-icon" aria-label="Facebook">
+          <i class="bi bi-facebook"></i>
+        </a>
+      </div>
+      <small style="color: #9b8a74;">© 2026 BIG E COOKIES. Handmade with love in Lebanon.</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    // 🆕 Updated with 11 flavours
+    const allFlavours = [
+      "Pistachio",
+      "Lotus",
+      "Kinder",
+      "Nutella",
+      "Galaxy Chocolate",
+      "Marshmallows",
+      "Flio",
+      "Snickers",
+      "Kit Kat",
+      "Big E Cookies & Cream",
+      "Vanilla Crunch"
+    ];
+
+    const maxFlavoursMap = {
+      "Small Box": 2,
+      "Medium Box": 3,
+      "Large Box": 4,
+      "Extra Large Box": 5
+    };
+    const whatsappNumber = "96176118612";
+    let currentBoxSize = "";
+
+    function openCustomizer(boxSize) {
+      currentBoxSize = boxSize;
+      document.getElementById('selectedSizeDisplay').value = boxSize;
+      const maxAllowed = maxFlavoursMap[boxSize] || allFlavours.length;
+      generateFlavorCheckboxes(boxSize, maxAllowed);
+      updateSummary();
+      document.getElementById('maxFlavorNote').textContent =
+        `Maximum ${maxAllowed} flavour${maxAllowed > 1 ? 's' : ''} allowed.`;
+      new bootstrap.Modal(document.getElementById('customizeModal')).show();
+    }
+
+    function generateFlavorCheckboxes(boxSize, maxAllowed) {
+      const container = document.getElementById('flavorCheckboxes');
+      let html = '';
+      allFlavours.forEach((flavour, index) => {
+        html += `
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="${flavour}" id="flavor${index}"
+                   onchange="handleFlavorChange(this, ${maxAllowed})">
+            <label class="form-check-label" for="flavor${index}">${flavour}</label>
+          </div>`;
+      });
+      container.innerHTML = html;
+    }
+
+    function handleFlavorChange(checkbox, maxAllowed) {
+      const checkedBoxes = document.querySelectorAll('#flavorCheckboxes input:checked');
+      if (checkedBoxes.length > maxAllowed) {
+        checkbox.checked = false;
+        alert(`You can only select up to ${maxAllowed} flavours for the ${currentBoxSize}.`);
+      }
+      updateSummary();
+    }
+
+    function updateSummary() {
+      const checked = Array.from(document.querySelectorAll('#flavorCheckboxes input:checked'))
+                         .map(cb => cb.value);
+      const summary = document.getElementById('summaryText');
+      summary.innerHTML = checked.length
+        ? `<strong>Selected:</strong> ${checked.join(', ')}`
+        : '<span class="text-muted">No flavours selected yet</span>';
+    }
+
+    function confirmSelection() {
+      const checked = Array.from(document.querySelectorAll('#flavorCheckboxes input:checked'))
+                         .map(cb => cb.value);
+      if (checked.length === 0) {
+        alert('Please select at least one flavour.');
+        return;
+      }
+      const orderMessage = `Hello BIG E COOKIES! I'd like to order a *${currentBoxSize}* with the following flavours: ${checked.join(', ')}.`;
+      const encodedMessage = encodeURIComponent(orderMessage);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      const modalBody = document.querySelector('#customizeModal .modal-body');
+      modalBody.innerHTML = `
+        <div class="text-center">
+          <h5 class="mb-3">✅ Order Summary</h5>
+          <p><strong>Box:</strong> ${currentBoxSize}</p>
+          <p><strong>Flavours:</strong> ${checked.join(', ')}</p>
+          <p class="text-muted">Click the button below to send your order to us on WhatsApp.</p>
+          <a href="${whatsappURL}" target="_blank" class="btn btn-gold mt-3">
+            <i class="bi bi-whatsapp me-2"></i>Send Order via WhatsApp
+          </a>
+        </div>
+      `;
+      document.querySelector('#customizeModal .modal-footer').innerHTML = `
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+      `;
+    }
+  </script>
+</body>
+</html>
