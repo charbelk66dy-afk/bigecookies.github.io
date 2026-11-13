@@ -196,10 +196,6 @@
     .stepper.empty .qty, .stepper.empty .minus { display: none; }
     .stepper.empty .plus { width: 46px; height: 46px; font-size: 1.35rem; box-shadow: 0 8px 18px rgba(42,29,23,.25); }
 
-    .mini-link { display: inline-flex; align-items: center; gap: 6px; font-size: .9rem; font-weight: 600; color: var(--cocoa); text-decoration: none; }
-    .mini-link b { color: var(--espresso); }
-    .mini-link:hover { color: var(--gold); }
-
     /* ---------- MINI COOKIES ---------- */
     .mini-wrap { display: grid; grid-template-columns: 1fr 1.05fr; gap: 36px; background: #fff; border-radius: 32px; padding: 26px; box-shadow: var(--shadow); align-items: start; }
     .mini-photo { position: sticky; top: 92px; border-radius: 24px; overflow: hidden; }
@@ -386,7 +382,6 @@
       .price-seal { width: 76px; height: 76px; font-size: 1.3rem; }
       .m-row { padding: 8px 4px; }
       .mini-actions .btns, .mini-actions .btn { width: 100%; }
-      .mini-link { font-size: .78rem; }
       .pick-grid { grid-template-columns: repeat(2, 1fr); }
       .sheet { top: auto; bottom: 0; left: 0; width: 100%; max-height: 90vh; border-radius: 28px 28px 0 0; transform: translateY(100%); }
       .sheet.open { transform: none; }
@@ -700,11 +695,7 @@
           </div>
           <div class="f-body">
             <h3>${esc(f.name)}</h3>
-            <p>${esc(f.desc)}</p>
-            <div class="f-foot">
-              <a class="mini-link" href="#m-${f.id}">Also as a mini cookie · <b>${fmt(MINI_PRICE)}</b></a>
-              <svg class="i" style="color:var(--gold)"><use href="#i-arrow"/></svg>
-            </div>
+            <p style="margin-bottom:0">${esc(f.desc)}</p>
           </div>
         </article>`).join('');
       $('#miniList').innerHTML = FLAVOURS.map(f => `
