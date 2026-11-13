@@ -196,6 +196,31 @@
     .stepper.empty .qty, .stepper.empty .minus { display: none; }
     .stepper.empty .plus { width: 46px; height: 46px; font-size: 1.35rem; box-shadow: 0 8px 18px rgba(42,29,23,.25); }
 
+    .mini-link { display: inline-flex; align-items: center; gap: 6px; font-size: .9rem; font-weight: 600; color: var(--cocoa); text-decoration: none; }
+    .mini-link b { color: var(--espresso); }
+    .mini-link:hover { color: var(--gold); }
+
+    /* ---------- MINI COOKIES ---------- */
+    .mini-wrap { display: grid; grid-template-columns: 1fr 1.05fr; gap: 36px; background: #fff; border-radius: 32px; padding: 26px; box-shadow: var(--shadow); align-items: start; }
+    .mini-photo { position: sticky; top: 92px; border-radius: 24px; overflow: hidden; }
+    .mini-photo img { width: 100%; aspect-ratio: 4 / 3.3; object-fit: cover; }
+    .price-seal { position: absolute; right: 16px; top: 16px; width: 92px; height: 92px; border-radius: 50%; background: var(--gold); color: var(--espresso); display: grid; place-items: center; text-align: center; font-family: var(--display); font-weight: 700; font-size: 1.6rem; line-height: 1; box-shadow: 0 10px 24px rgba(42,29,23,.3); transform: rotate(-8deg); }
+    .price-seal small { display: block; font-family: var(--body); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
+    .mini-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 20px 18px; color: #fff; background: linear-gradient(transparent, rgba(42,29,23,.85)); font-weight: 500; }
+    .mini-caption b { font-family: var(--display); font-size: 1.35rem; display: block; }
+    .mini-list { display: flex; flex-direction: column; }
+    .m-row { display: flex; align-items: center; gap: 14px; padding: 9px 10px; border-radius: 16px; border-bottom: 1px solid var(--line); scroll-margin-top: 100px; }
+    .m-row:target { animation: glow 1.8s ease; }
+    @keyframes glow { 0%, 60% { background: #fbefd6; } 100% { background: transparent; } }
+    .m-row img { width: 52px; height: 52px; border-radius: 14px; object-fit: cover; flex: none; }
+    .m-row .nm { flex: 1; font-weight: 600; line-height: 1.2; }
+    .m-row .nm small { display: inline-flex; align-items: center; gap: 3px; color: var(--flame); font-size: .72rem; font-weight: 700; margin-left: 4px; }
+    .mini-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-top: 18px; padding: 16px; border-radius: 18px; background: var(--dough); }
+    .mini-actions .sum { font-weight: 700; }
+    .mini-actions .sum small { display: block; color: var(--muted); font-weight: 500; }
+    .mini-actions .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .mini-actions .btn { padding: 12px 18px; font-size: .92rem; }
+
     /* ---------- BOXES ---------- */
     .boxes { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
     .b-card {
@@ -219,12 +244,9 @@
     .croissants { grid-template-columns: repeat(3, 1fr); }
     .c-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; transition: transform .3s, box-shadow .3s; }
     .c-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-    .c-art { aspect-ratio: 16 / 10; display: grid; place-items: center; position: relative; }
-    .c-art svg { width: 70%; height: auto; filter: drop-shadow(0 14px 18px rgba(74,51,41,.28)); transition: transform .5s; }
-    .c-card:hover .c-art svg { transform: rotate(-4deg) scale(1.05); }
-    .c-art.zaatar { background: radial-gradient(circle at 50% 60%, #e5ead1, #cfd8ae); }
-    .c-art.cheese { background: radial-gradient(circle at 50% 60%, #fff3cf, #f6dc95); }
-    .c-art.custom { background: radial-gradient(circle at 50% 60%, #f4e2cf, #e2c09a); }
+    .c-art { aspect-ratio: 16 / 10.5; position: relative; overflow: hidden; }
+    .c-art img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+    .c-card:hover .c-art img { transform: scale(1.06); }
     .c-tag { position: absolute; top: 14px; left: 14px; background: rgba(255,255,255,.9); border-radius: 999px; padding: 6px 12px; font-size: .78rem; font-weight: 700; }
     .c-card .f-body h3 { font-size: 1.5rem; }
 
@@ -352,13 +374,19 @@
       .f-foot { padding-top: 10px; }
       .f-foot .label { font-size: .72rem; }
       .f-foot .label b { font-size: .9rem; }
-      .round { width: 32px; height: 32px; font-size: .95rem; }
+      .f-card .round { width: 32px; height: 32px; }
       .stepper { gap: 2px; padding: 3px; }
       body.has-order .wa-fab { display: none; }
       .stepper.empty .plus { width: 40px; height: 40px; }
       .stepper .qty { min-width: 18px; }
       .hot-badge { top: 8px; left: 8px; font-size: .68rem; padding: 5px 9px 5px 8px; }
       .croissants { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+      .mini-wrap { grid-template-columns: 1fr; padding: 14px; gap: 18px; border-radius: 26px; }
+      .mini-photo { position: relative; top: 0; }
+      .price-seal { width: 76px; height: 76px; font-size: 1.3rem; }
+      .m-row { padding: 8px 4px; }
+      .mini-actions .btns, .mini-actions .btn { width: 100%; }
+      .mini-link { font-size: .78rem; }
       .pick-grid { grid-template-columns: repeat(2, 1fr); }
       .sheet { top: auto; bottom: 0; left: 0; width: 100%; max-height: 90vh; border-radius: 28px 28px 0 0; transform: translateY(100%); }
       .sheet.open { transform: none; }
@@ -384,18 +412,6 @@
       <circle cx="44" cy="38" r="4.5" fill="#4a3329"/><circle cx="26" cy="42" r="4" fill="#4a3329"/>
       <circle cx="34" cy="31" r="2.6" fill="#4a3329"/><circle cx="17" cy="33" r="2.4" fill="#4a3329"/>
     </symbol>
-    <symbol id="croissant" viewBox="0 0 220 140">
-      <g stroke="#9b5d22" stroke-width="3" stroke-linejoin="round">
-        <ellipse cx="38" cy="98" rx="26" ry="15" transform="rotate(-52 38 98)" fill="#d48d3f"/>
-        <ellipse cx="182" cy="98" rx="26" ry="15" transform="rotate(52 182 98)" fill="#d48d3f"/>
-        <ellipse cx="66" cy="70" rx="33" ry="25" transform="rotate(-32 66 70)" fill="#e2a352"/>
-        <ellipse cx="154" cy="70" rx="33" ry="25" transform="rotate(32 154 70)" fill="#e2a352"/>
-        <ellipse cx="110" cy="60" rx="38" ry="33" fill="#eab463"/>
-      </g>
-      <g fill="none" stroke="#fff3d6" stroke-width="3" stroke-linecap="round" opacity=".55">
-        <path d="M92 44 q12 -8 26 -4"/><path d="M52 58 q8 -8 20 -8"/><path d="M150 52 q10 2 16 10"/>
-      </g>
-    </symbol>
   </svg>
 
   <!-- NAV -->
@@ -406,6 +422,7 @@
       </a>
       <nav class="nav-links" aria-label="Main">
         <a href="#flavours">Flavours</a>
+        <a href="#minis">Mini cookies</a>
         <a href="#boxes">Boxes</a>
         <a href="#croissants">Croissants</a>
         <a href="#how">How to order</a>
@@ -450,9 +467,36 @@
           <span class="eyebrow">The flavours</span>
           <h2>Pick your <em>favourite</em></h2>
           <p>Every flavour comes as a big cookie in our boxes, or as a little round mini cookie on its own.</p>
-          <div class="mini-note"><span class="dot"><svg class="i"><use href="#i-plus"/></svg></span>Tap <b>+</b> to add mini round cookies · <b>$1.50</b> each</div>
         </div>
         <div class="grid flavours" id="flavourGrid"></div>
+      </div>
+    </section>
+
+    <!-- MINI COOKIES -->
+    <section class="block" id="minis">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Mini cookies</span>
+          <h2>Little rounds, <em>every flavour</em></h2>
+          <p>Mix as many mini round cookies as you like, in any flavour. Tap <b>+</b> to add, or grab one of each.</p>
+        </div>
+        <div class="mini-wrap reveal">
+          <div class="mini-photo">
+            <img src="images/mini.jpg" alt="BIG E mini round cookie" loading="lazy" />
+            <div class="price-seal"><div>$1.50<small>each</small></div></div>
+            <div class="mini-caption"><b>Mini round cookies</b>Available in all our flavours</div>
+          </div>
+          <div>
+            <div class="mini-list" id="miniList"></div>
+            <div class="mini-actions">
+              <div class="sum" id="miniSum">No minis yet<small>Pick your flavours above</small></div>
+              <div class="btns">
+                <button class="btn btn-gold" onclick="oneOfEach()" id="oneEachBtn"><svg class="i"><use href="#i-stars"/></svg> One of each</button>
+                <button class="btn btn-primary" onclick="openCart()"><svg class="i"><use href="#i-bag"/></svg> View order</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -592,9 +636,9 @@
 
     const CROISSANT_PRICE = { lbp: 200000 };
     const CROISSANTS = [
-      { id: 'zaatar', name: "Za'atar Croissant", art: 'zaatar', tag: 'Savoury', desc: "Flaky butter croissant filled with Lebanese za'atar and olive oil." },
-      { id: 'cheese', name: 'Cheese Croissant',  art: 'cheese', tag: 'Savoury', desc: 'Golden, buttery layers with a soft, melty cheese filling.' },
-      { id: 'custom', name: 'Build Your Croissant', art: 'custom', tag: 'Choose a filling', custom: true, desc: 'A plain croissant filled with one cookie flavour of your choice.' },
+      { id: 'zaatar', name: "Za'atar Croissant", img: 'images/croissant-zaatar.jpg', tag: 'Savoury', desc: "Flaky butter croissant filled with Lebanese za'atar and olive oil." },
+      { id: 'cheese', name: 'Cheese Croissant',  img: 'images/croissant-cheese.jpg', tag: 'Savoury', desc: 'Golden, buttery layers with a soft, melty cheese filling.' },
+      { id: 'custom', name: 'Build Your Croissant', img: 'images/croissant-plain.jpg', tag: 'Choose a filling', custom: true, desc: 'A plain croissant filled with one cookie flavour of your choice.' },
     ];
 
     /* ========================================================= */
@@ -658,11 +702,22 @@
             <h3>${esc(f.name)}</h3>
             <p>${esc(f.desc)}</p>
             <div class="f-foot">
-              <div class="label">Mini cookie<b>${fmt(MINI_PRICE)}</b></div>
-              <div id="step-${f.id}">${stepperHTML(f.id)}</div>
+              <a class="mini-link" href="#m-${f.id}">Also as a mini cookie · <b>${fmt(MINI_PRICE)}</b></a>
+              <svg class="i" style="color:var(--gold)"><use href="#i-arrow"/></svg>
             </div>
           </div>
         </article>`).join('');
+      $('#miniList').innerHTML = FLAVOURS.map(f => `
+        <div class="m-row" id="m-${f.id}">
+          <img src="${f.img}" alt="" loading="lazy" />
+          <div class="nm">${esc(f.name)}${f.hot ? '<small><svg class="i"><use href="#i-fire"/></svg>HOT</small>' : ''}</div>
+          <div id="step-${f.id}">${stepperHTML(f.id)}</div>
+        </div>`).join('');
+      $('#oneEachBtn').innerHTML = `<svg class="i"><use href="#i-stars"/></svg> One of each · ${fmt({ usd: MINI_PRICE.usd * FLAVOURS.length })}`;
+    }
+    function oneOfEach() {
+      FLAVOURS.forEach(f => addItem({ key: 'mini-' + f.id, type: 'mini', name: 'Mini cookie', detail: f.name, img: f.img, price: MINI_PRICE }, 1));
+      toast(`Added one of each flavour (${FLAVOURS.length} minis)`);
     }
     function miniChange(id, d) {
       const f = flavour(id);
@@ -690,13 +745,9 @@
     function renderCroissants() {
       $('#croissantGrid').innerHTML = CROISSANTS.map(c => `
         <article class="c-card reveal">
-          <div class="c-art ${c.art}">
+          <div class="c-art">
+            <img src="${c.img}" alt="${esc(c.name)}" loading="lazy" />
             <span class="c-tag">${c.tag}</span>
-            <svg viewBox="0 0 220 140" aria-hidden="true"><use href="#croissant"/>${c.art === 'zaatar'
-              ? '<g fill="#5d7a2e"><circle cx="95" cy="50" r="2.5"/><circle cx="112" cy="44" r="2"/><circle cx="125" cy="58" r="2.5"/><circle cx="70" cy="66" r="2"/><circle cx="150" cy="68" r="2.2"/><circle cx="104" cy="70" r="2"/><circle cx="160" cy="58" r="1.8"/><circle cx="60" cy="78" r="1.8"/></g>'
-              : c.art === 'cheese'
-              ? '<g fill="#ffd54d" stroke="#e0a91c" stroke-width="2"><path d="M86 88 q4 18 10 0z"/><path d="M118 92 q5 22 12 0z"/><path d="M146 84 q3 12 8 0z"/></g>'
-              : '<g><circle cx="110" cy="62" r="20" fill="#fff" opacity=".92"/><path d="M110 52 v20 M100 62 h20" stroke="#4a3329" stroke-width="5" stroke-linecap="round"/></g>'}</svg>
           </div>
           <div class="f-body">
             <h3>${c.name}</h3>
@@ -715,7 +766,7 @@
       const f = fillingId ? flavour(fillingId) : null;
       addItem({
         key: 'cro-' + id + (f ? '-' + f.id : ''), type: 'croissant',
-        name: f ? 'Croissant' : c.name, detail: f ? f.name + ' filling' : '', img: null, icon: '🥐', price: CROISSANT_PRICE
+        name: f ? 'Croissant' : c.name, detail: f ? f.name + ' filling' : '', img: c.img, price: CROISSANT_PRICE
       }, 1);
       toast(`Added ${f ? f.name + ' croissant' : c.name}`);
     }
@@ -771,6 +822,10 @@
       if (countEl.textContent !== String(t.count)) { countEl.textContent = t.count; countEl.classList.remove('bump'); void countEl.offsetWidth; countEl.classList.add('bump'); }
       $('#orderBar').classList.toggle('show', t.count > 0);
       document.body.classList.toggle('has-order', t.count > 0);
+      const minis = cart.filter(i => i.type === 'mini').reduce((n, i) => n + i.qty, 0);
+      $('#miniSum').innerHTML = minis
+        ? `${minis} mini${minis === 1 ? '' : 's'} · ${fmt({ usd: minis * MINI_PRICE.usd })}<small>Added to your order</small>`
+        : 'No minis yet<small>Pick your flavours with +</small>';
       $('#orderBarText').innerHTML = `<svg class="i"><use href="#i-bag"/></svg> ${t.count} item${t.count === 1 ? '' : 's'} · ${totalText(t)}`;
 
       if (!cart.length) {
