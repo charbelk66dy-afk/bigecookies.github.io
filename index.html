@@ -847,7 +847,7 @@
       if (!cart.length) return;
       const t = totals();
       const lines = cart.map(i => {
-        const what = i.type === 'mini' ? `Mini ${i.detail} cookie`
+        const what = i.type === 'mini' ? `Mini cookie (${i.detail})`
           : i.type === 'box' ? `${i.name} (${i.detail})`
           : i.detail ? `${i.name} with ${i.detail}` : i.name;
         const line = i.price.usd != null ? { usd: i.price.usd * i.qty } : { lbp: i.price.lbp * i.qty };
@@ -855,7 +855,7 @@
       });
       const name = $('#custName').value.trim();
       const notes = $('#custNotes').value.trim();
-      let msg = `Hello BIG E COOKIES! 🍪 I'd like to order:\n\n${lines.join('\n')}\n\n*Total: ${totalText(t)}*`;
+      let msg = `Hello BIG E COOKIES! I'd like to order:\n\n${lines.join('\n')}\n\n*Total: ${totalText(t)}*`;
       if (name) msg += `\n\nName: ${name}`;
       if (notes) msg += `\nNotes: ${notes}`;
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
