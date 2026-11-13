@@ -3,580 +3,850 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BIG E COOKIES | Luxury Cookie Boxes</title>
+  <title>BIG E COOKIES | Luxury Cookies &amp; Croissants · Lebanon</title>
+  <meta name="description" content="Luxury homemade cookie boxes, mini cookies and croissants from Lebanon. Build your order and send it on WhatsApp in seconds." />
+  <meta name="theme-color" content="#2a1d17" />
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
-  <!-- AOS animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Link previews (Instagram, WhatsApp). Update the URLs once the .com is live. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BIG E COOKIES | Luxury Cookies · Lebanon" />
+  <meta property="og:description" content="Cookie boxes, mini cookies & croissants. Order on WhatsApp in seconds." />
+  <meta property="og:image" content="https://charbelk66dy-afk.github.io/bigecookies.github.io/images/nutella.jpg" />
+  <meta property="og:url" content="https://charbelk66dy-afk.github.io/bigecookies.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%AA%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
-
     :root {
-      --gold: #c9a96e;
-      --dark: #2c2420;
-      --cream: #faf7f2;
-      --card-bg: #ffffff;
-      --text-dark: #3e3a37;
+      --espresso: #2a1d17;
+      --cocoa: #4a3329;
+      --cream: #fbf6ee;
+      --dough: #f3e6d1;
+      --gold: #c9a24f;
+      --gold-soft: #e7cf96;
+      --flame: #e2582a;
+      --muted: #7a6a5d;
+      --line: rgba(42, 29, 23, .1);
+      --radius: 22px;
+      --shadow: 0 12px 32px rgba(42, 29, 23, .08);
+      --shadow-lg: 0 24px 60px rgba(42, 29, 23, .18);
+      --display: 'Fraunces', Georgia, serif;
+      --body: 'DM Sans', system-ui, sans-serif;
     }
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--cream);
-      color: var(--text-dark);
+      margin: 0;
+      font-family: var(--body);
+      color: var(--espresso);
+      background-color: var(--cream);
+      /* Cookie pattern behind everything */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg opacity='.13'%3E%3Ccircle cx='55' cy='60' r='34' fill='%23c9965a'/%3E%3Ccircle cx='45' cy='50' r='5' fill='%234a3329'/%3E%3Ccircle cx='66' cy='56' r='4' fill='%234a3329'/%3E%3Ccircle cx='52' cy='74' r='4.5' fill='%234a3329'/%3E%3Ccircle cx='70' cy='75' r='3' fill='%234a3329'/%3E%3Ccircle cx='190' cy='170' r='26' fill='%23c9965a'/%3E%3Ccircle cx='182' cy='162' r='4' fill='%234a3329'/%3E%3Ccircle cx='198' cy='172' r='3.5' fill='%234a3329'/%3E%3Ccircle cx='186' cy='182' r='3' fill='%234a3329'/%3E%3Ccircle cx='205' cy='45' r='14' fill='%23c9965a'/%3E%3Ccircle cx='202' cy='42' r='2.5' fill='%234a3329'/%3E%3Ccircle cx='209' cy='49' r='2' fill='%234a3329'/%3E%3Ccircle cx='70' cy='205' r='18' fill='%23c9965a'/%3E%3Ccircle cx='65' cy='200' r='3' fill='%234a3329'/%3E%3Ccircle cx='75' cy='210' r='2.5' fill='%234a3329'/%3E%3Ccircle cx='128' cy='120' r='3' fill='%23c9965a'/%3E%3Ccircle cx='240' cy='110' r='2.5' fill='%23c9965a'/%3E%3Ccircle cx='15' cy='140' r='2.5' fill='%23c9965a'/%3E%3C/g%3E%3C/svg%3E");
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
+    img { max-width: 100%; display: block; }
+    .i { width: 1.1em; height: 1.1em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.15em; }
+    a { color: inherit; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.05; margin: 0; letter-spacing: -.01em; }
+    .wrap { width: min(1180px, 100% - 40px); margin-inline: auto; }
 
-    h1, h2, h3, .hero-title, .card-title, .modal-title {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      color: var(--dark);
+    /* ---------- NAV ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(251, 246, 238, .82);
+      backdrop-filter: saturate(160%) blur(14px);
+      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav .wrap { display: flex; align-items: center; gap: 28px; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-weight: 700; font-size: 1.35rem; letter-spacing: .02em; }
+    .logo svg { width: 34px; height: 34px; }
+    .nav-links { display: flex; gap: 26px; margin-left: auto; }
+    .nav-links a { text-decoration: none; font-weight: 500; font-size: .95rem; color: var(--cocoa); position: relative; }
+    .nav-links a::after { content: ''; position: absolute; left: 0; right: 100%; bottom: -6px; height: 2px; background: var(--gold); transition: right .25s; }
+    .nav-links a:hover::after { right: 0; }
+    .cart-btn {
+      position: relative; display: inline-flex; align-items: center; gap: 8px;
+      border: 0; background: var(--espresso); color: var(--cream);
+      padding: 10px 18px; border-radius: 999px; font-weight: 600; font-size: .95rem;
+      transition: transform .2s, background .2s;
+    }
+    .cart-btn:hover { background: var(--cocoa); transform: translateY(-1px); }
+    .cart-count {
+      min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px;
+      background: var(--gold); color: var(--espresso); font-size: .78rem; font-weight: 700;
+      display: inline-grid; place-items: center;
+    }
+    .cart-count.bump { animation: bump .4s; }
+    @keyframes bump { 50% { transform: scale(1.35); } }
+
+    /* ---------- HERO ---------- */
+    .hero { padding: 64px 0 40px; }
+    .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold);
+    }
+    .eyebrow::before { content: ''; width: 28px; height: 2px; background: currentColor; }
+    .hero h1 { font-size: clamp(2.8rem, 6.4vw, 5.4rem); margin: 18px 0 22px; }
+    .hero h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
+    .hero p.lead { font-size: 1.15rem; line-height: 1.6; color: var(--muted); max-width: 30em; margin: 0 0 32px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      border: 0; border-radius: 999px; padding: 15px 28px; font-weight: 700; font-size: 1rem;
+      text-decoration: none; transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .btn-primary { background: var(--espresso); color: var(--cream); box-shadow: 0 10px 24px rgba(42,29,23,.25); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 30px rgba(42,29,23,.3); }
+    .btn-ghost { background: transparent; color: var(--espresso); box-shadow: inset 0 0 0 2px var(--espresso); }
+    .btn-ghost:hover { background: var(--espresso); color: var(--cream); }
+    .btn-gold { background: var(--gold); color: var(--espresso); }
+    .btn-gold:hover { background: var(--gold-soft); transform: translateY(-2px); }
+    .btn-wa { background: #1fa855; color: #fff; }
+    .btn-wa:hover { background: #18914a; transform: translateY(-2px); }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-trust { display: flex; gap: 22px; margin-top: 34px; flex-wrap: wrap; color: var(--cocoa); font-size: .92rem; font-weight: 500; }
+    .hero-trust span { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-trust .i { color: var(--gold); font-size: 1.1rem; }
+
+    .hero-visual { position: relative; }
+    .hero-visual .frame {
+      border-radius: 32px; overflow: hidden; box-shadow: var(--shadow-lg);
+      transform: rotate(1.5deg); aspect-ratio: 4 / 3.4;
+    }
+    .hero-visual .frame img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.03); }
+    .float-chip {
+      position: absolute; display: flex; align-items: center; gap: 10px;
+      background: #fff; border-radius: 16px; padding: 12px 16px; box-shadow: var(--shadow-lg);
+      font-size: .9rem; font-weight: 600; animation: float 5s ease-in-out infinite;
+    }
+    .float-chip small { display: block; font-weight: 500; color: var(--muted); font-size: .78rem; }
+    .float-chip .ic { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; font-size: 1.2rem; }
+    .chip-a { left: -26px; bottom: 34px; }
+    .chip-a .ic { background: #fde8de; color: var(--flame); }
+    .chip-b { right: -18px; top: 26px; animation-delay: -2.5s; }
+    .chip-b .ic { background: #e7f6ec; color: #1fa855; }
+    @keyframes float { 50% { transform: translateY(-10px); } }
+
+    /* ---------- MARQUEE ---------- */
+    .marquee { background: var(--espresso); color: var(--gold-soft); overflow: hidden; padding: 16px 0; margin-top: 40px; }
+    .marquee-track { display: flex; gap: 40px; width: max-content; animation: scroll 38s linear infinite; font-family: var(--display); font-style: italic; font-size: 1.3rem; }
+    .marquee-track span { display: inline-flex; align-items: center; gap: 40px; white-space: nowrap; }
+    .marquee-track span::after { content: '✦'; color: var(--gold); font-style: normal; font-size: .9rem; }
+    @keyframes scroll { to { transform: translateX(-50%); } }
+
+    /* ---------- SECTIONS ---------- */
+    section.block { padding: 96px 0 40px; }
+    .section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+    .section-head h2 { font-size: clamp(2.2rem, 4.6vw, 3.4rem); margin: 14px 0 14px; }
+    .section-head h2 em { font-style: italic; font-weight: 500; color: var(--gold); }
+    .section-head p { color: var(--muted); font-size: 1.05rem; line-height: 1.6; margin: 0; }
+    .mini-note {
+      display: inline-flex; align-items: center; gap: 10px; margin-top: 18px;
+      background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px 8px 8px;
+      font-size: .92rem; font-weight: 500;
+    }
+    .mini-note .dot { width: 28px; height: 28px; border-radius: 50%; background: var(--espresso); color: var(--cream); display: grid; place-items: center; }
+
+    /* ---------- FLAVOUR CARDS ---------- */
+    .grid { display: grid; gap: 24px; }
+    .flavours { grid-template-columns: repeat(3, 1fr); }
+    .f-card {
+      background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+      display: flex; flex-direction: column; transition: transform .3s, box-shadow .3s;
+    }
+    .f-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .f-img { position: relative; aspect-ratio: 16 / 10.5; overflow: hidden; background: var(--dough); }
+    .f-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+    .f-card:hover .f-img img { transform: scale(1.06); }
+    .hot-badge {
+      position: absolute; top: 14px; left: 14px; display: inline-flex; align-items: center; gap: 6px;
+      background: linear-gradient(135deg, #ff7a3d, var(--flame)); color: #fff;
+      padding: 7px 12px 7px 10px; border-radius: 999px; font-size: .78rem; font-weight: 700; letter-spacing: .03em;
+      box-shadow: 0 6px 16px rgba(226, 88, 42, .45);
+    }
+    .hot-badge .i { animation: flicker 1.4s ease-in-out infinite; display: inline-block; }
+    @keyframes flicker { 0%,100% { transform: scale(1) rotate(-4deg); } 50% { transform: scale(1.18) rotate(4deg); } }
+    .f-body { padding: 20px 22px 18px; display: flex; flex-direction: column; flex: 1; }
+    .f-body h3 { font-size: 1.45rem; }
+    .f-body p { color: var(--muted); margin: 8px 0 18px; line-height: 1.5; font-size: .95rem; }
+    .f-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px dashed var(--line); padding-top: 14px; }
+    .f-foot .label { font-size: .85rem; color: var(--muted); line-height: 1.3; }
+    .f-foot .label b { display: block; color: var(--espresso); font-size: 1rem; }
+
+    /* round + stepper */
+    .stepper { display: inline-flex; align-items: center; gap: 4px; background: var(--dough); border-radius: 999px; padding: 4px; }
+    .stepper .qty { min-width: 26px; text-align: center; font-weight: 700; }
+    .round {
+      width: 40px; height: 40px; border-radius: 50%; border: 0; display: grid; place-items: center;
+      background: var(--espresso); color: var(--cream); font-size: 1.15rem; transition: transform .15s, background .2s;
+    }
+    .round:hover { background: var(--gold); color: var(--espresso); }
+    .round:active { transform: scale(.88); }
+    .round.light { background: #fff; color: var(--espresso); }
+    .round.light:hover { background: var(--gold-soft); }
+    .stepper.empty { background: transparent; padding: 0; }
+    .stepper.empty .qty, .stepper.empty .minus { display: none; }
+    .stepper.empty .plus { width: 46px; height: 46px; font-size: 1.35rem; box-shadow: 0 8px 18px rgba(42,29,23,.25); }
+
+    /* ---------- BOXES ---------- */
+    .boxes { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+    .b-card {
+      position: relative; background: #fff; border-radius: 28px; padding: 36px 30px 30px; box-shadow: var(--shadow);
+      display: flex; flex-direction: column; text-align: center; transition: transform .3s, box-shadow .3s;
+    }
+    .b-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .b-card.featured { background: var(--espresso); color: var(--cream); }
+    .b-card.featured .b-meta, .b-card.featured .b-desc { color: var(--gold-soft); }
+    .b-ribbon { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--espresso); font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 7px 16px; border-radius: 999px; white-space: nowrap; }
+    .b-icon { width: 92px; height: 92px; margin: 0 auto 18px; }
+    .b-card h3 { font-size: 1.7rem; }
+    .b-price { font-family: var(--display); font-size: 2.8rem; font-weight: 700; margin: 14px 0 4px; }
+    .b-price small { font-family: var(--body); font-size: 1rem; font-weight: 500; opacity: .7; }
+    .b-meta { font-weight: 600; color: var(--gold); font-size: .95rem; }
+    .b-desc { color: var(--muted); margin: 10px 0 26px; }
+    .b-card .btn { margin-top: auto; width: 100%; }
+
+    /* ---------- CROISSANTS ---------- */
+    .croissant-band { background: linear-gradient(180deg, transparent, rgba(243,230,209,.7) 18%, rgba(243,230,209,.7) 82%, transparent); }
+    .croissants { grid-template-columns: repeat(3, 1fr); }
+    .c-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; transition: transform .3s, box-shadow .3s; }
+    .c-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .c-art { aspect-ratio: 16 / 10; display: grid; place-items: center; position: relative; }
+    .c-art svg { width: 70%; height: auto; filter: drop-shadow(0 14px 18px rgba(74,51,41,.28)); transition: transform .5s; }
+    .c-card:hover .c-art svg { transform: rotate(-4deg) scale(1.05); }
+    .c-art.zaatar { background: radial-gradient(circle at 50% 60%, #e5ead1, #cfd8ae); }
+    .c-art.cheese { background: radial-gradient(circle at 50% 60%, #fff3cf, #f6dc95); }
+    .c-art.custom { background: radial-gradient(circle at 50% 60%, #f4e2cf, #e2c09a); }
+    .c-tag { position: absolute; top: 14px; left: 14px; background: rgba(255,255,255,.9); border-radius: 999px; padding: 6px 12px; font-size: .78rem; font-weight: 700; }
+    .c-card .f-body h3 { font-size: 1.5rem; }
+
+    /* ---------- HOW ---------- */
+    .steps { grid-template-columns: repeat(3, 1fr); counter-reset: s; }
+    .step { background: #fff; border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); position: relative; }
+    .step .n { font-family: var(--display); font-style: italic; font-size: 3rem; color: var(--gold); line-height: 1; }
+    .step h3 { font-size: 1.35rem; margin: 12px 0 8px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.55; }
+
+    /* ---------- CTA + FOOTER ---------- */
+    .cta-band { margin: 80px auto 0; background: var(--espresso); color: var(--cream); border-radius: 36px; padding: 56px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 30px; align-items: center; overflow: hidden; position: relative; }
+    .cta-band h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    .cta-band h2 em { color: var(--gold); font-weight: 500; }
+    .cta-band p { color: var(--gold-soft); margin: 14px 0 0; }
+    .cta-band .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+    footer { padding: 56px 0 120px; text-align: center; color: var(--muted); }
+    footer .logo { justify-content: center; margin-bottom: 14px; color: var(--espresso); }
+    .socials { display: flex; justify-content: center; gap: 12px; margin: 18px 0; }
+    .socials a { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: #fff; box-shadow: var(--shadow); font-size: 1.2rem; text-decoration: none; transition: transform .2s, background .2s; }
+    .socials a:hover { transform: translateY(-3px); background: var(--gold-soft); }
+
+    /* ---------- SHEET (modal) & DRAWER ---------- */
+    .overlay { position: fixed; inset: 0; background: rgba(42,29,23,.5); backdrop-filter: blur(3px); opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 90; }
+    .overlay.open { opacity: 1; pointer-events: auto; }
+    .sheet {
+      position: fixed; z-index: 100; left: 50%; top: 50%; width: min(560px, 100% - 24px); max-height: min(86vh, 760px);
+      transform: translate(-50%, -46%) scale(.97); opacity: 0; pointer-events: none;
+      background: var(--cream); border-radius: 28px; box-shadow: var(--shadow-lg);
+      display: flex; flex-direction: column; transition: opacity .25s, transform .3s;
+    }
+    .sheet.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
+    .sheet-head { padding: 24px 26px 10px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+    .sheet-head h3 { font-size: 1.6rem; }
+    .sheet-head p { margin: 6px 0 0; color: var(--muted); font-size: .95rem; }
+    .x { width: 40px; height: 40px; border-radius: 50%; border: 0; background: #fff; font-size: 1.1rem; flex: none; box-shadow: var(--shadow); }
+    .sheet-body { padding: 10px 26px; overflow-y: auto; }
+    .sheet-foot { padding: 16px 26px 24px; display: flex; gap: 12px; align-items: center; border-top: 1px solid var(--line); }
+    .sheet-foot .btn { flex: 1; }
+    .counter { font-weight: 700; color: var(--cocoa); white-space: nowrap; }
+    .pick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding-bottom: 6px; }
+    .pick {
+      position: relative; border: 2px solid transparent; background: #fff; border-radius: 16px; padding: 0 0 10px; overflow: hidden;
+      text-align: center; font-size: .85rem; font-weight: 600; box-shadow: 0 4px 12px rgba(42,29,23,.06); transition: border-color .2s, transform .15s, opacity .2s;
+    }
+    .pick img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; margin-bottom: 8px; }
+    .pick span { padding: 0 6px; display: block; line-height: 1.2; }
+    .pick:hover { transform: translateY(-2px); }
+    .pick.on { border-color: var(--gold); }
+    .pick.on::after { content: ''; position: absolute; top: 6px; right: 6px; width: 26px; height: 26px; border-radius: 50%; background: var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232a1d17' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 16px no-repeat; }
+    .pick:disabled { opacity: .4; cursor: not-allowed; transform: none; }
+
+    .drawer {
+      position: fixed; z-index: 100; top: 0; right: 0; bottom: 0; width: min(440px, 100%);
+      background: var(--cream); box-shadow: var(--shadow-lg); transform: translateX(100%); transition: transform .35s cubic-bezier(.2,.8,.2,1);
+      display: flex; flex-direction: column;
+    }
+    .drawer.open { transform: none; }
+    .cart-empty { text-align: center; padding: 50px 10px; color: var(--muted); }
+    .cart-empty .i { width: 3rem; height: 3rem; color: var(--gold); display: block; margin: 0 auto 10px; }
+    .line { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); align-items: center; }
+    .line .thumb { width: 58px; height: 58px; border-radius: 14px; object-fit: cover; flex: none; background: var(--dough); display: grid; place-items: center; font-size: 1.6rem; }
+    .line .info { flex: 1; min-width: 0; }
+    .line .info b { display: block; font-size: .98rem; }
+    .line .info small { color: var(--muted); display: block; line-height: 1.35; }
+    .line .info .p { font-weight: 700; color: var(--cocoa); font-size: .9rem; margin-top: 4px; }
+    .line .stepper .round { width: 32px; height: 32px; font-size: .95rem; }
+    .totals { padding: 4px 0 2px; }
+    .totals div { display: flex; justify-content: space-between; padding: 4px 0; color: var(--muted); }
+    .totals div.grand { color: var(--espresso); font-weight: 700; font-size: 1.15rem; border-top: 1px solid var(--line); margin-top: 6px; padding-top: 10px; }
+    .field { display: block; margin-top: 14px; }
+    .field span { font-size: .85rem; font-weight: 600; color: var(--cocoa); }
+    .field input, .field textarea { width: 100%; margin-top: 6px; border: 1px solid var(--line); background: #fff; border-radius: 14px; padding: 12px 14px; font: inherit; resize: vertical; }
+    .field input:focus, .field textarea:focus { outline: 2px solid var(--gold); border-color: transparent; }
+    .drawer .sheet-foot { flex-direction: column; align-items: stretch; }
+    .drawer .sheet-foot .btn { width: 100%; }
+    .fine { font-size: .8rem; color: var(--muted); text-align: center; margin: 0; }
+
+    /* mobile order bar */
+    .order-bar {
+      position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60; display: none;
+      background: var(--espresso); color: var(--cream); border: 0; border-radius: 20px; padding: 14px 18px;
+      box-shadow: var(--shadow-lg); align-items: center; justify-content: space-between; gap: 10px; font-weight: 600;
+      transform: translateY(140%); transition: transform .35s;
+    }
+    .order-bar.show { transform: none; }
+    .order-bar .go { color: var(--gold); white-space: nowrap; }
+
+    .wa-fab { position: fixed; right: 22px; bottom: 22px; z-index: 55; width: 60px; height: 60px; border-radius: 50%; background: #1fa855; color: #fff; display: grid; place-items: center; font-size: 1.7rem; box-shadow: 0 12px 28px rgba(31,168,85,.45); text-decoration: none; transition: transform .2s; }
+    .wa-fab:hover { transform: scale(1.08); }
+
+    .toast { position: fixed; left: 50%; top: 84px; z-index: 120; transform: translate(-50%, -20px); opacity: 0; pointer-events: none; background: var(--espresso); color: var(--cream); padding: 12px 18px; border-radius: 999px; font-weight: 600; font-size: .92rem; box-shadow: var(--shadow-lg); transition: opacity .25s, transform .25s; display: flex; gap: 8px; align-items: center; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    .toast .i { color: var(--gold); }
+
+    /* reveal */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+      html { scroll-behavior: auto; }
     }
 
-    .hero {
-      background: linear-gradient(rgba(44, 36, 32, 0.65), rgba(44, 36, 32, 0.55)),
-                  url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=1200&auto=format&fit=crop') center/cover no-repeat;
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      margin-top: 0;
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 980px) {
+      .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual { max-width: 560px; margin: 0 auto; width: 100%; }
+      .flavours, .croissants { grid-template-columns: repeat(2, 1fr); }
+      .boxes, .steps { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+      .cta-band { grid-template-columns: 1fr; padding: 40px 28px; }
+      .cta-band .actions { justify-content: flex-start; }
     }
-
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #faf3e8;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .nav .cart-btn { margin-left: auto; }
+      .hero { padding-top: 36px; }
+      .chip-a { left: 8px; bottom: -18px; }
+      .chip-b { right: 8px; top: -16px; }
+      section.block { padding-top: 72px; }
+      .flavours { gap: 14px; }
+      .f-body { padding: 14px 14px 14px; }
+      .f-body h3 { font-size: 1.12rem; }
+      .f-body p { font-size: .82rem; margin: 6px 0 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+      .f-foot { padding-top: 10px; }
+      .f-foot .label { font-size: .72rem; }
+      .f-foot .label b { font-size: .9rem; }
+      .round { width: 32px; height: 32px; font-size: .95rem; }
+      .stepper { gap: 2px; padding: 3px; }
+      body.has-order .wa-fab { display: none; }
+      .stepper.empty .plus { width: 40px; height: 40px; }
+      .stepper .qty { min-width: 18px; }
+      .hot-badge { top: 8px; left: 8px; font-size: .68rem; padding: 5px 9px 5px 8px; }
+      .croissants { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+      .pick-grid { grid-template-columns: repeat(2, 1fr); }
+      .sheet { top: auto; bottom: 0; left: 0; width: 100%; max-height: 90vh; border-radius: 28px 28px 0 0; transform: translateY(100%); }
+      .sheet.open { transform: none; }
+      .order-bar { display: flex; }
+      .wa-fab { bottom: 86px; right: 16px; width: 52px; height: 52px; font-size: 1.45rem; }
+      .marquee-track { font-size: 1.1rem; }
     }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      font-weight: 300;
-      margin: 1rem 0 2rem;
-      letter-spacing: 2px;
-      color: #f0e6d3;
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      border: none;
-      color: var(--dark);
-      font-weight: 600;
-      padding: 0.8rem 2.5rem;
-      border-radius: 50px;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(201,169,110,0.4);
-    }
-
-    .btn-gold:hover {
-      background: #b8944c;
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    .section-title {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-      display: inline-block;
-      position: relative;
-    }
-
-    .section-title:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: var(--gold);
-      margin: 0.5rem auto 1rem;
-    }
-
-    .flavor-card {
-      background: var(--card-bg);
-      border: none;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-    }
-
-    .flavor-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-    }
-
-    .flavor-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-
-    .flavor-card .card-body {
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .flavor-card .card-title {
-      font-size: 1.5rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .flavor-card .card-text {
-      color: #6b625a;
-      font-size: 0.95rem;
-    }
-
-    .pricing-card {
-      background: var(--card-bg);
-      border: none;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-    }
-
-    .price {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin: 1rem 0;
-    }
-
-    .price small {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #7b6e5e;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .btn-outline-gold {
-      border: 2px solid var(--gold);
-      color: var(--dark);
-      background: transparent;
-      font-weight: 600;
-      border-radius: 30px;
-      padding: 0.6rem 2rem;
-      transition: all 0.3s;
-    }
-
-    .btn-outline-gold:hover {
-      background: var(--gold);
-      color: white;
-    }
-
-    .form-check-input:checked {
-      background-color: var(--gold);
-      border-color: var(--gold);
-    }
-
-    .modal-content {
-      border-radius: 25px;
-      border: none;
-      background: #fffcf7;
-    }
-
-    .selected-flavors-summary {
-      min-height: 50px;
-      padding: 0.5rem;
-      border-radius: 12px;
-      background: #faf6ef;
-      margin-top: 1rem;
-    }
-
-    footer {
-      background: var(--dark);
-      color: #cbb592;
-      padding: 2rem 0;
-      text-align: center;
-    }
-
-    .footer-phone {
-      color: #cbb592;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .footer-phone:hover {
-      color: var(--gold);
-    }
-
-    .social-icon {
-      font-size: 2rem;
-      color: #cbb592;
-      margin: 0 0.8rem;
-      transition: color 0.3s, transform 0.3s;
-      display: inline-block;
-    }
-
-    .social-icon:hover {
-      color: var(--gold);
-      transform: scale(1.2);
-    }
-
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2.5rem; }
-      .section-title { font-size: 2.2rem; }
-    }
-
-    @media (max-width: 400px) {
-      .footer-phone {
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-      .social-icon {
-        margin: 0 0.5rem;
-      }
+    @media (max-width: 380px) {
+      .f-foot { flex-direction: column; align-items: stretch; }
+      .f-foot .stepper { align-self: flex-end; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content" data-aos="fade-down">
-      <h1 class="hero-title">BIG E COOKIES</h1>
-      <p class="hero-subtitle">LUXURY HOMEMADE COOKIES · LEBANON</p>
-      <a href="#flavors" class="btn btn-gold">Discover Our Flavours</a>
-    </div>
-  </section>
+  <!-- Shared SVG symbols -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-dash" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="currentColor" stroke="none"/><path d="M8 12.5l3 3 5-6" stroke="#2a1d17"/></symbol><symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12H6.2L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/><path d="M12 17.5s-3-1.8-3-4a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 2.2-3 4-3 4z" fill="currentColor" stroke="none"/></symbol><symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 2.5c.6 3.6 5.8 5.7 5.8 11.5a5.8 5.8 0 0 1-11.6 0c0-2.8 1.6-4.6 2.8-5.7.1 1.9.9 3 2 3.2-.4-3.4-.3-6.2 1-9z" fill="currentColor" stroke="none"/></symbol><symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z"/><path d="M8.6 8.2c.3-.5.9-.5 1.2 0l.8 1.6c.1.3 0 .6-.2.8l-.6.6c.6 1.3 1.6 2.3 2.9 2.9l.6-.6c.2-.2.5-.3.8-.2l1.6.8c.5.3.5.9 0 1.2-.6.5-1.4.9-2.3.6-2.6-.8-4.6-2.8-5.4-5.4-.3-.9.1-1.7.6-2.3z" fill="currentColor" stroke="none"/></symbol><symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 4h3.2l1.8 4.6-2.3 1.4a10.5 10.5 0 0 0 5.8 5.8l1.4-2.3 4.6 1.8v3.2a2 2 0 0 1-2.2 2A15.8 15.8 0 0 1 3.5 6.2 2 2 0 0 1 5.5 4z"/></symbol><symbol id="i-gift" viewBox="0 0 24 24"><path d="M3.5 8h17v4h-17zM5 12v8.5h14V12M12 8v12.5"/><path d="M12 8C10.5 4.5 7 4.3 7 6.5S12 8 12 8s5 .7 5-1.5S13.5 4.5 12 8z"/></symbol><symbol id="i-stars" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></symbol>
+    <symbol id="cookie" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="29" fill="#d9a35f"/>
+      <circle cx="32" cy="32" r="29" fill="none" stroke="#b97d3a" stroke-width="3"/>
+      <circle cx="22" cy="22" r="4.5" fill="#4a3329"/><circle cx="40" cy="20" r="3.5" fill="#4a3329"/>
+      <circle cx="44" cy="38" r="4.5" fill="#4a3329"/><circle cx="26" cy="42" r="4" fill="#4a3329"/>
+      <circle cx="34" cy="31" r="2.6" fill="#4a3329"/><circle cx="17" cy="33" r="2.4" fill="#4a3329"/>
+    </symbol>
+    <symbol id="croissant" viewBox="0 0 220 140">
+      <g stroke="#9b5d22" stroke-width="3" stroke-linejoin="round">
+        <ellipse cx="38" cy="98" rx="26" ry="15" transform="rotate(-52 38 98)" fill="#d48d3f"/>
+        <ellipse cx="182" cy="98" rx="26" ry="15" transform="rotate(52 182 98)" fill="#d48d3f"/>
+        <ellipse cx="66" cy="70" rx="33" ry="25" transform="rotate(-32 66 70)" fill="#e2a352"/>
+        <ellipse cx="154" cy="70" rx="33" ry="25" transform="rotate(32 154 70)" fill="#e2a352"/>
+        <ellipse cx="110" cy="60" rx="38" ry="33" fill="#eab463"/>
+      </g>
+      <g fill="none" stroke="#fff3d6" stroke-width="3" stroke-linecap="round" opacity=".55">
+        <path d="M92 44 q12 -8 26 -4"/><path d="M52 58 q8 -8 20 -8"/><path d="M150 52 q10 2 16 10"/>
+      </g>
+    </symbol>
+  </svg>
 
-  <!-- FLAVOUR SHOWCASE -->
-  <section id="flavors" class="container my-5 py-5">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <h2 class="section-title">Our Flavours</h2>
-      <p class="text-muted">Handpicked premium ingredients, baked with love</p>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap">
+      <a href="#top" class="logo" aria-label="BIG E COOKIES home">
+        <svg><use href="#cookie"/></svg> BIG E
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#flavours">Flavours</a>
+        <a href="#boxes">Boxes</a>
+        <a href="#croissants">Croissants</a>
+        <a href="#how">How to order</a>
+      </nav>
+      <button class="cart-btn" onclick="openCart()" aria-label="Open your order">
+        <svg class="i"><use href="#i-bag"/></svg> Order <span class="cart-count" id="cartCount">0</span>
+      </button>
     </div>
+  </header>
 
-    <div class="row g-4">
-      <!-- Pistachio -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="flavor-card">
-          <img src="images/pistachio.jpg" alt="Pistachio Cookie Box" />
-          <div class="card-body">
-            <h5 class="card-title">Pistachio</h5>
-            <p class="card-text">Rich, nutty, and irresistibly crunchy.</p>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="eyebrow">Luxury homemade · Lebanon</span>
+          <h1>Big cookies.<br /><em>Bigger</em> cravings.</h1>
+          <p class="lead">Gooey cookie boxes, mini cookies and fresh croissants. Pick your favourites, build your order and send it to us on WhatsApp in seconds.</p>
+          <div class="hero-ctas">
+            <a href="#boxes" class="btn btn-primary"><svg class="i"><use href="#i-gift"/></svg> Build your box</a>
+            <a href="#flavours" class="btn btn-ghost">See all flavours</a>
+          </div>
+          <div class="hero-trust">
+            <span><svg class="i"><use href="#i-heart"/></svg> Handmade</span>
+            <span><svg class="i"><use href="#i-stars"/></svg> Premium ingredients</span>
+            <span><svg class="i"><use href="#i-wa"/></svg> Order on WhatsApp</span>
           </div>
         </div>
-      </div>
-      <!-- Lotus -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
-        <div class="flavor-card">
-          <img src="images/lotus.jpg" alt="Lotus Cookie Box" />
-          <div class="card-body">
-            <h5 class="card-title">Lotus</h5>
-            <p class="card-text">Caramelised biscuit magic in every bite.</p>
-          </div>
+        <div class="hero-visual reveal">
+          <div class="frame"><img src="images/nutella.jpg" alt="Nutella cookie pie in a gold BIG E tin" fetchpriority="high" /></div>
+          <div class="float-chip chip-a"><div class="ic"><svg class="i"><use href="#i-fire"/></svg></div><div>Hot seller<small>Nutella &amp; Cookies and Cream</small></div></div>
+          <div class="float-chip chip-b"><div class="ic"><svg class="i"><use href="#i-wa"/></svg></div><div>Easy ordering<small>Straight to WhatsApp</small></div></div>
         </div>
       </div>
-      <!-- Kinder -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="flavor-card">
-          <img src="images/kinder.jpg" alt="Kinder Cookie Box" />
-          <div class="card-body">
-            <h5 class="card-title">Kinder</h5>
-            <p class="card-text">Smooth milk chocolate and creamy filling.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Nutella -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
-        <div class="flavor-card">
-          <img src="images/nutella.jpg" alt="Nutella Cookie Box" />
-          <div class="card-body">
-            <h5 class="card-title">Nutella</h5>
-            <p class="card-text">World-famous hazelnut spread, baked inside.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Galaxy Chocolate -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="flavor-card">
-          <img src="images/galaxy.jpg" alt="Galaxy Chocolate Cookie Box" />
-          <div class="card-body">
-            <h5 class="card-title">Galaxy Chocolate</h5>
-            <p class="card-text">Silky, smooth chocolate that melts hearts.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Marshmallows -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
-        <div class="flavor-card">
-          <img src="images/marshmallow.jpg" alt="Marshmallow Cookie Box" />
-          <div class="card-body">
-            <h5 class="card-title">Marshmallows</h5>
-            <p class="card-text">Soft, gooey clouds tucked into our dough.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Flio -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="flavor-card">
-          <img src="images/flio.jpg" alt="Flio Cookie Box" />
-          <div class="card-body">
-            <h5 class="card-title">Flio</h5>
-            <p class="card-text">Light, crispy wafers with a creamy hazelnut heart.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Snickers -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="450">
-        <div class="flavor-card">
-          <img src="images/snickers.jpg" alt="Snickers Cookie Box" />
-          <div class="card-body">
-            <h5 class="card-title">Snickers</h5>
-            <p class="card-text">Loaded with peanuts, caramel, and milk chocolate chunks.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Kit Kat -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
-        <div class="flavor-card">
-          <img src="images/kitkat.jpg" alt="Kit Kat Cookie Box" />
-          <div class="card-body">
-            <h5 class="card-title">Kit Kat</h5>
-            <p class="card-text">Crispy wafer pieces folded into a break‑apart cookie.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Big E Cookies & Cream -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="550">
-        <div class="flavor-card">
-          <img src="images/cookiesandcream.jpg" alt="Big E Cookies & Cream Box" />
-          <div class="card-body">
-            <h5 class="card-title">Big E Cookies &amp; Cream</h5>
-            <p class="card-text">Our signature cookie blended with chunks of chocolate cream.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Vanilla Crunch -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
-        <div class="flavor-card">
-          <img src="images/vanillacrunch.jpg" alt="Vanilla Crunch Cookie Box" />
-          <div class="card-body">
-            <h5 class="card-title">Vanilla Crunch</h5>
-            <p class="card-text">Buttery vanilla cookie with a satisfying golden crunch.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+    </section>
 
-  <!-- BOX PRICING -->
-  <section id="menu" class="container my-5 py-5">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <h2 class="section-title">Our Signature Boxes</h2>
-      <p class="text-muted">Mix any flavours you like — every box is custom-made</p>
-    </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-        <div class="pricing-card">
-          <h3 class="card-title">Small Box</h3>
-          <div class="price">$3 <small>USD</small></div>
-          <p class="text-muted">Perfect for a sweet moment</p>
-          <button class="btn btn-outline-gold mt-auto" onclick="openCustomizer('Small Box')">Mix Flavours</button>
+    <!-- FLAVOURS + MINI COOKIES -->
+    <section class="block" id="flavours">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">The flavours</span>
+          <h2>Pick your <em>favourite</em></h2>
+          <p>Every flavour comes as a big cookie in our boxes, or as a little round mini cookie on its own.</p>
+          <div class="mini-note"><span class="dot"><svg class="i"><use href="#i-plus"/></svg></span>Tap <b>+</b> to add mini round cookies · <b>$1.50</b> each</div>
         </div>
+        <div class="grid flavours" id="flavourGrid"></div>
       </div>
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-        <div class="pricing-card">
-          <h3 class="card-title">Medium Box</h3>
-          <div class="price">$5 <small>USD</small></div>
-          <p class="text-muted">Share the joy</p>
-          <button class="btn btn-outline-gold mt-auto" onclick="openCustomizer('Medium Box')">Mix Flavours</button>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-        <div class="pricing-card">
-          <h3 class="card-title">Large Box</h3>
-          <div class="price">600,000 <small>LBP</small></div>
-          <p class="text-muted"><strong>Up to 4 flavours</strong></p>
-          <button class="btn btn-outline-gold mt-auto" onclick="openCustomizer('Large Box')">Mix Flavours</button>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-        <div class="pricing-card">
-          <h3 class="card-title">Extra Large Box</h3>
-          <div class="price">$10 <small>USD</small></div>
-          <p class="text-muted"><strong>Up to 5 flavours</strong></p>
-          <button class="btn btn-outline-gold mt-auto" onclick="openCustomizer('Extra Large Box')">Mix Flavours</button>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MIX YOUR BOX MODAL -->
-  <div class="modal fade" id="customizeModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Build Your Box</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- BOXES -->
+    <section class="block" id="boxes">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Signature boxes</span>
+          <h2>Mix &amp; match <em>your box</em></h2>
+          <p>Choose a size, pick your flavours, and we'll bake your custom box.</p>
         </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label class="form-label fw-bold">Selected Box Size</label>
-            <input type="text" id="selectedSizeDisplay" class="form-control" readonly disabled />
-          </div>
-          <p class="fw-bold mb-2">Choose your flavours:</p>
-          <div id="flavorCheckboxes"></div>
-          <div class="selected-flavors-summary mt-3" id="summaryText">
-            <span class="text-muted">No flavours selected yet</span>
-          </div>
-          <small class="text-muted" id="maxFlavorNote"></small>
+        <div class="grid boxes" id="boxGrid"></div>
+      </div>
+    </section>
+
+    <!-- CROISSANTS -->
+    <section class="block croissant-band" id="croissants">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Fresh croissants</span>
+          <h2>Flaky, buttery, <em>yours</em></h2>
+          <p>Classic savoury croissants, or a plain one filled with any of our cookie flavours. All croissants are <b>200,000 LBP</b>.</p>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-gold" onclick="confirmSelection()">Confirm Selection</button>
+        <div class="grid croissants" id="croissantGrid"></div>
+      </div>
+    </section>
+
+    <!-- HOW TO ORDER -->
+    <section class="block" id="how">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">How to order</span>
+          <h2>Three steps to <em>happiness</em></h2>
+        </div>
+        <div class="grid steps">
+          <div class="step reveal"><div class="n">01</div><h3>Pick your treats</h3><p>Build a cookie box, add mini cookies with the + button, or choose a croissant.</p></div>
+          <div class="step reveal"><div class="n">02</div><h3>Review your order</h3><p>Open your order to adjust quantities and add your name and any notes.</p></div>
+          <div class="step reveal"><div class="n">03</div><h3>Send on WhatsApp</h3><p>Your full order is written for you. Just hit send and we'll confirm with you.</p></div>
+        </div>
+
+        <div class="cta-band reveal">
+          <div>
+            <h2>Craving something <em>sweet?</em></h2>
+            <p>Questions, events or big orders? Message us directly.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-wa" href="https://wa.me/96176118612" target="_blank" rel="noopener"><svg class="i"><use href="#i-wa"/></svg> WhatsApp us</a>
+            <a class="btn btn-gold" href="#boxes">Start an order</a>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <p class="mb-2" style="font-family: 'Playfair Display', serif; font-size: 1.5rem;">BIG E COOKIES</p>
-      <div class="mb-2">
-        <i class="bi bi-telephone-fill me-2"></i>
-        <a href="tel:+96176118612" class="footer-phone">+961 76 118 612</a>
+    <div class="wrap">
+      <a href="#top" class="logo"><svg><use href="#cookie"/></svg> BIG E COOKIES</a>
+      <p>Luxury homemade cookies &amp; croissants · Lebanon</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/big_e_cookies" target="_blank" rel="noopener" aria-label="Instagram"><svg class="i"><use href="#i-insta"/></svg></a>
+        <a href="https://wa.me/96176118612" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="i"><use href="#i-wa"/></svg></a>
+        <a href="tel:+96176118612" aria-label="Call us"><svg class="i"><use href="#i-phone"/></svg></a>
       </div>
-      <div class="mb-3">
-        <a href="https://www.instagram.com/big_e_cookies" target="_blank" class="social-icon" aria-label="Instagram">
-          <i class="bi bi-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" class="social-icon" aria-label="Facebook">
-          <i class="bi bi-facebook"></i>
-        </a>
-      </div>
-      <small style="color: #9b8a74;">© 2026 BIG E COOKIES. Handmade with love in Lebanon.</small>
+      <p><a href="tel:+96176118612" style="text-decoration:none;font-weight:600;color:var(--cocoa)">+961 76 118 612</a></p>
+      <small>© <span id="year">2026</span> BIG E COOKIES. Handmade with love in Lebanon.</small>
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true });
+  <!-- floating buttons -->
+  <a class="wa-fab" href="https://wa.me/96176118612" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg class="i"><use href="#i-wa"/></svg></a>
+  <button class="order-bar" id="orderBar" onclick="openCart()">
+    <span id="orderBarText">Your order</span><span class="go">View order <svg class="i"><use href="#i-arrow"/></svg></span>
+  </button>
 
-    // 🆕 Updated with 11 flavours
-    const allFlavours = [
-      "Pistachio",
-      "Lotus",
-      "Kinder",
-      "Nutella",
-      "Galaxy Chocolate",
-      "Marshmallows",
-      "Flio",
-      "Snickers",
-      "Kit Kat",
-      "Big E Cookies & Cream",
-      "Vanilla Crunch"
+  <div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+  <!-- PICKER SHEET (boxes + croissant filling) -->
+  <div class="sheet" id="picker" role="dialog" aria-modal="true" aria-labelledby="pickerTitle">
+    <div class="sheet-head">
+      <div><h3 id="pickerTitle">Build your box</h3><p id="pickerSub"></p></div>
+      <button class="x" onclick="closeAll()" aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="sheet-body"><div class="pick-grid" id="pickGrid"></div></div>
+    <div class="sheet-foot">
+      <span class="counter" id="pickCounter">0 / 2</span>
+      <button class="btn btn-primary" id="pickAdd" onclick="confirmPick()">Add to order</button>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <aside class="drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="sheet-head">
+      <div><h3 id="cartTitle">Your order</h3><p>Review, then send it to us on WhatsApp.</p></div>
+      <button class="x" onclick="closeAll()" aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="sheet-body" style="flex:1">
+      <div id="cartLines"></div>
+      <div id="cartExtras">
+        <div class="totals" id="totals"></div>
+        <label class="field"><span>Your name (optional)</span><input id="custName" type="text" autocomplete="name" placeholder="e.g. Charbel" /></label>
+        <label class="field"><span>Notes (optional)</span><textarea id="custNotes" rows="2" placeholder="Delivery area, date, time, special requests…"></textarea></label>
+      </div>
+    </div>
+    <div class="sheet-foot" id="cartFoot">
+      <button class="btn btn-wa" onclick="sendOrder()"><svg class="i"><use href="#i-wa"/></svg> Send order on WhatsApp</button>
+      <p class="fine">We'll reply on WhatsApp to confirm your order and delivery.</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"><svg class="i"><use href="#i-check"/></svg><span id="toastText"></span></div>
+
+  <script>
+    /* =========================================================
+       MENU — edit flavours, prices and boxes here
+       ========================================================= */
+    const WHATSAPP_NUMBER = '96176118612';
+
+    const FLAVOURS = [
+      { id: 'nutella',  name: 'Nutella',               img: 'images/nutella.jpg',         hot: true, desc: 'World-famous hazelnut spread, baked right inside.' },
+      { id: 'cnc',      name: 'Big E Cookies & Cream', img: 'images/cookiesandcream.jpg', hot: true, desc: 'Our signature cookie loaded with cookies and cream chunks.' },
+      { id: 'pistachio',name: 'Pistachio',             img: 'images/pistachio.jpg',       desc: 'Rich, nutty and irresistibly crunchy.' },
+      { id: 'lotus',    name: 'Lotus',                 img: 'images/lotus.jpg',           desc: 'Caramelised biscuit magic in every bite.' },
+      { id: 'kinder',   name: 'Kinder',                img: 'images/kinder.jpg',          desc: 'Smooth milk chocolate and creamy filling.' },
+      { id: 'white',    name: 'White Chocolate',       img: 'images/white.jpg',           desc: 'Creamy white chocolate swirl with a hint of hazelnut.' },
+      { id: 'galaxy',   name: 'Galaxy Chocolate',      img: 'images/galaxy.jpg',          desc: 'Silky, smooth chocolate that melts hearts.' },
+      { id: 'snickers', name: 'Snickers',              img: 'images/snickers.jpg',        desc: 'Peanuts, caramel and milk chocolate chunks.' },
+      { id: 'vanilla',  name: 'Vanilla Crunch',        img: 'images/vanillacrunch.jpg',   desc: 'Buttery vanilla cookie with a golden crunch.' },
     ];
 
-    const maxFlavoursMap = {
-      "Small Box": 2,
-      "Medium Box": 3,
-      "Large Box": 4,
-      "Extra Large Box": 5
-    };
-    const whatsappNumber = "96176118612";
-    let currentBoxSize = "";
+    const MINI_PRICE = { usd: 1.5 };
 
-    function openCustomizer(boxSize) {
-      currentBoxSize = boxSize;
-      document.getElementById('selectedSizeDisplay').value = boxSize;
-      const maxAllowed = maxFlavoursMap[boxSize] || allFlavours.length;
-      generateFlavorCheckboxes(boxSize, maxAllowed);
-      updateSummary();
-      document.getElementById('maxFlavorNote').textContent =
-        `Maximum ${maxAllowed} flavour${maxAllowed > 1 ? 's' : ''} allowed.`;
-      new bootstrap.Modal(document.getElementById('customizeModal')).show();
+    const BOXES = [
+      { id: 'small', name: 'Small Box',       price: { lbp: 300000 }, max: 2, desc: 'Perfect for a sweet moment' },
+      { id: 'large', name: 'Large Box',       price: { usd: 10 },     max: 4, desc: 'Share the joy', featured: true },
+      { id: 'xl',    name: 'Extra Large Box', price: { usd: 15 },     max: 5, desc: 'Made for parties & gatherings' },
+    ];
+
+    const CROISSANT_PRICE = { lbp: 200000 };
+    const CROISSANTS = [
+      { id: 'zaatar', name: "Za'atar Croissant", art: 'zaatar', tag: 'Savoury', desc: "Flaky butter croissant filled with Lebanese za'atar and olive oil." },
+      { id: 'cheese', name: 'Cheese Croissant',  art: 'cheese', tag: 'Savoury', desc: 'Golden, buttery layers with a soft, melty cheese filling.' },
+      { id: 'custom', name: 'Build Your Croissant', art: 'custom', tag: 'Choose a filling', custom: true, desc: 'A plain croissant filled with one cookie flavour of your choice.' },
+    ];
+
+    /* ========================================================= */
+
+    const $ = (s) => document.querySelector(s);
+    const fmt = (p) => p.usd != null
+      ? '$' + (Number.isInteger(p.usd) ? p.usd : p.usd.toFixed(2))
+      : p.lbp.toLocaleString('en-US') + ' LBP';
+    const esc = (s) => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const flavour = (id) => FLAVOURS.find(f => f.id === id);
+
+    /* ---------- cart state ---------- */
+    let cart = [];
+    try { cart = JSON.parse(localStorage.getItem('bigeCart') || '[]'); } catch (e) { cart = []; }
+    const save = () => { try { localStorage.setItem('bigeCart', JSON.stringify(cart)); } catch (e) {} };
+
+    function addItem(item, qty = 1) {
+      const existing = cart.find(i => i.key === item.key);
+      if (existing) existing.qty += qty; else cart.push({ ...item, qty });
+      cart = cart.filter(i => i.qty > 0);
+      save(); renderAll();
+    }
+    function setQty(key, delta) {
+      const it = cart.find(i => i.key === key);
+      if (!it) return;
+      it.qty += delta;
+      cart = cart.filter(i => i.qty > 0);
+      save(); renderAll();
+    }
+    const miniQty = (id) => (cart.find(i => i.key === 'mini-' + id) || {}).qty || 0;
+
+    function totals() {
+      const t = { usd: 0, lbp: 0, count: 0 };
+      cart.forEach(i => { t.count += i.qty; if (i.price.usd != null) t.usd += i.price.usd * i.qty; else t.lbp += i.price.lbp * i.qty; });
+      return t;
+    }
+    function totalText(t) {
+      const parts = [];
+      if (t.usd) parts.push(fmt({ usd: t.usd }));
+      if (t.lbp) parts.push(fmt({ lbp: t.lbp }));
+      return parts.join(' + ') || '—';
     }
 
-    function generateFlavorCheckboxes(boxSize, maxAllowed) {
-      const container = document.getElementById('flavorCheckboxes');
-      let html = '';
-      allFlavours.forEach((flavour, index) => {
-        html += `
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="${flavour}" id="flavor${index}"
-                   onchange="handleFlavorChange(this, ${maxAllowed})">
-            <label class="form-check-label" for="flavor${index}">${flavour}</label>
-          </div>`;
-      });
-      container.innerHTML = html;
+    /* ---------- render: flavours ---------- */
+    function stepperHTML(id) {
+      const q = miniQty(id);
+      return `<div class="stepper ${q ? '' : 'empty'}">
+        <button class="round light minus" onclick="miniChange('${id}',-1)" aria-label="Remove one mini ${esc(flavour(id).name)}"><svg class="i"><use href="#i-dash"/></svg></button>
+        <span class="qty">${q}</span>
+        <button class="round plus" onclick="miniChange('${id}',1)" aria-label="Add one mini ${esc(flavour(id).name)} cookie"><svg class="i"><use href="#i-plus"/></svg></button>
+      </div>`;
+    }
+    function renderFlavours() {
+      $('#flavourGrid').innerHTML = FLAVOURS.map(f => `
+        <article class="f-card reveal">
+          <div class="f-img">
+            <img src="${f.img}" alt="${esc(f.name)} cookie" loading="lazy" />
+            ${f.hot ? '<span class="hot-badge"><svg class="i"><use href="#i-fire"/></svg> HOT SELLER</span>' : ''}
+          </div>
+          <div class="f-body">
+            <h3>${esc(f.name)}</h3>
+            <p>${esc(f.desc)}</p>
+            <div class="f-foot">
+              <div class="label">Mini cookie<b>${fmt(MINI_PRICE)}</b></div>
+              <div id="step-${f.id}">${stepperHTML(f.id)}</div>
+            </div>
+          </div>
+        </article>`).join('');
+    }
+    function miniChange(id, d) {
+      const f = flavour(id);
+      if (d > 0) {
+        addItem({ key: 'mini-' + id, type: 'mini', name: 'Mini cookie', detail: f.name, img: f.img, price: MINI_PRICE }, 1);
+        toast(`Added mini ${f.name} cookie`);
+      } else setQty('mini-' + id, -1);
     }
 
-    function handleFlavorChange(checkbox, maxAllowed) {
-      const checkedBoxes = document.querySelectorAll('#flavorCheckboxes input:checked');
-      if (checkedBoxes.length > maxAllowed) {
-        checkbox.checked = false;
-        alert(`You can only select up to ${maxAllowed} flavours for the ${currentBoxSize}.`);
+    /* ---------- render: boxes ---------- */
+    function renderBoxes() {
+      $('#boxGrid').innerHTML = BOXES.map(b => `
+        <article class="b-card reveal ${b.featured ? 'featured' : ''}">
+          ${b.featured ? '<span class="b-ribbon">Most popular</span>' : ''}
+          <svg class="b-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#cookie"/></svg>
+          <h3>${b.name}</h3>
+          <div class="b-price">${b.price.usd != null ? '$' + b.price.usd + ' <small>USD</small>' : b.price.lbp.toLocaleString('en-US') + ' <small>LBP</small>'}</div>
+          <div class="b-meta">Up to ${b.max} flavours</div>
+          <p class="b-desc">${b.desc}</p>
+          <button class="btn ${b.featured ? 'btn-gold' : 'btn-primary'}" onclick="openPicker('box','${b.id}')"><svg class="i"><use href="#i-grid"/></svg> Choose flavours</button>
+        </article>`).join('');
+    }
+
+    /* ---------- render: croissants ---------- */
+    function renderCroissants() {
+      $('#croissantGrid').innerHTML = CROISSANTS.map(c => `
+        <article class="c-card reveal">
+          <div class="c-art ${c.art}">
+            <span class="c-tag">${c.tag}</span>
+            <svg viewBox="0 0 220 140" aria-hidden="true"><use href="#croissant"/>${c.art === 'zaatar'
+              ? '<g fill="#5d7a2e"><circle cx="95" cy="50" r="2.5"/><circle cx="112" cy="44" r="2"/><circle cx="125" cy="58" r="2.5"/><circle cx="70" cy="66" r="2"/><circle cx="150" cy="68" r="2.2"/><circle cx="104" cy="70" r="2"/><circle cx="160" cy="58" r="1.8"/><circle cx="60" cy="78" r="1.8"/></g>'
+              : c.art === 'cheese'
+              ? '<g fill="#ffd54d" stroke="#e0a91c" stroke-width="2"><path d="M86 88 q4 18 10 0z"/><path d="M118 92 q5 22 12 0z"/><path d="M146 84 q3 12 8 0z"/></g>'
+              : '<g><circle cx="110" cy="62" r="20" fill="#fff" opacity=".92"/><path d="M110 52 v20 M100 62 h20" stroke="#4a3329" stroke-width="5" stroke-linecap="round"/></g>'}</svg>
+          </div>
+          <div class="f-body">
+            <h3>${c.name}</h3>
+            <p>${c.desc}</p>
+            <div class="f-foot">
+              <div class="label">${c.custom ? 'Any 1 cookie flavour' : 'Fresh croissant'}<b>${fmt(CROISSANT_PRICE)}</b></div>
+              ${c.custom
+                ? `<button class="btn btn-primary" style="padding:11px 18px" onclick="openPicker('croissant','custom')"><svg class="i"><use href="#i-plus"/></svg> Pick filling</button>`
+                : `<button class="round plus" style="width:46px;height:46px" onclick="addCroissant('${c.id}')" aria-label="Add ${c.name}"><svg class="i"><use href="#i-plus"/></svg></button>`}
+            </div>
+          </div>
+        </article>`).join('');
+    }
+    function addCroissant(id, fillingId) {
+      const c = CROISSANTS.find(x => x.id === id);
+      const f = fillingId ? flavour(fillingId) : null;
+      addItem({
+        key: 'cro-' + id + (f ? '-' + f.id : ''), type: 'croissant',
+        name: f ? 'Croissant' : c.name, detail: f ? f.name + ' filling' : '', img: null, icon: '🥐', price: CROISSANT_PRICE
+      }, 1);
+      toast(`Added ${f ? f.name + ' croissant' : c.name}`);
+    }
+
+    /* ---------- picker sheet ---------- */
+    let picker = { mode: null, id: null, max: 1, chosen: [] };
+    function openPicker(mode, id) {
+      const box = mode === 'box' ? BOXES.find(b => b.id === id) : null;
+      picker = { mode, id, max: box ? box.max : 1, chosen: [] };
+      $('#pickerTitle').textContent = box ? box.name : 'Build your croissant';
+      $('#pickerSub').textContent = box
+        ? `${fmt(box.price)} · choose up to ${box.max} flavours`
+        : `${fmt(CROISSANT_PRICE)} · choose 1 filling`;
+      renderPicks();
+      openLayer('#picker');
+    }
+    function renderPicks() {
+      const full = picker.chosen.length >= picker.max;
+      $('#pickGrid').innerHTML = FLAVOURS.map(f => {
+        const on = picker.chosen.includes(f.id);
+        const disabled = full && !on && picker.max > 1;
+        return `<button class="pick ${on ? 'on' : ''}" ${disabled ? 'disabled' : ''} onclick="togglePick('${f.id}')" aria-pressed="${on}">
+          <img src="${f.img}" alt="" loading="lazy" /><span>${esc(f.name)}</span></button>`;
+      }).join('');
+      $('#pickCounter').textContent = `${picker.chosen.length} / ${picker.max} chosen`;
+      $('#pickAdd').disabled = picker.chosen.length === 0;
+      $('#pickAdd').style.opacity = picker.chosen.length ? 1 : .5;
+    }
+    function togglePick(id) {
+      const i = picker.chosen.indexOf(id);
+      if (i > -1) picker.chosen.splice(i, 1);
+      else if (picker.max === 1) picker.chosen = [id];
+      else if (picker.chosen.length < picker.max) picker.chosen.push(id);
+      renderPicks();
+    }
+    function confirmPick() {
+      if (!picker.chosen.length) return;
+      if (picker.mode === 'box') {
+        const b = BOXES.find(x => x.id === picker.id);
+        const names = picker.chosen.map(id => flavour(id).name);
+        addItem({ key: 'box-' + b.id + '-' + [...picker.chosen].sort().join('.'), type: 'box', name: b.name, detail: names.join(', '), icon: '🍪', price: b.price }, 1);
+        toast(`${b.name} added to your order`);
+      } else {
+        addCroissant('custom', picker.chosen[0]);
       }
-      updateSummary();
+      closeAll();
     }
 
-    function updateSummary() {
-      const checked = Array.from(document.querySelectorAll('#flavorCheckboxes input:checked'))
-                         .map(cb => cb.value);
-      const summary = document.getElementById('summaryText');
-      summary.innerHTML = checked.length
-        ? `<strong>Selected:</strong> ${checked.join(', ')}`
-        : '<span class="text-muted">No flavours selected yet</span>';
-    }
+    /* ---------- cart drawer ---------- */
+    function renderCart() {
+      const t = totals();
+      const countEl = $('#cartCount');
+      if (countEl.textContent !== String(t.count)) { countEl.textContent = t.count; countEl.classList.remove('bump'); void countEl.offsetWidth; countEl.classList.add('bump'); }
+      $('#orderBar').classList.toggle('show', t.count > 0);
+      document.body.classList.toggle('has-order', t.count > 0);
+      $('#orderBarText').innerHTML = `<svg class="i"><use href="#i-bag"/></svg> ${t.count} item${t.count === 1 ? '' : 's'} · ${totalText(t)}`;
 
-    function confirmSelection() {
-      const checked = Array.from(document.querySelectorAll('#flavorCheckboxes input:checked'))
-                         .map(cb => cb.value);
-      if (checked.length === 0) {
-        alert('Please select at least one flavour.');
+      if (!cart.length) {
+        $('#cartLines').innerHTML = `<div class="cart-empty"><svg class="i"><use href="#i-bag"/></svg>Your order is empty.<br />Add a box, some mini cookies or a croissant.</div>`;
+        $('#cartExtras').style.display = 'none'; $('#cartFoot').style.display = 'none';
         return;
       }
-      const orderMessage = `Hello BIG E COOKIES! I'd like to order a *${currentBoxSize}* with the following flavours: ${checked.join(', ')}.`;
-      const encodedMessage = encodeURIComponent(orderMessage);
-      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-      const modalBody = document.querySelector('#customizeModal .modal-body');
-      modalBody.innerHTML = `
-        <div class="text-center">
-          <h5 class="mb-3">✅ Order Summary</h5>
-          <p><strong>Box:</strong> ${currentBoxSize}</p>
-          <p><strong>Flavours:</strong> ${checked.join(', ')}</p>
-          <p class="text-muted">Click the button below to send your order to us on WhatsApp.</p>
-          <a href="${whatsappURL}" target="_blank" class="btn btn-gold mt-3">
-            <i class="bi bi-whatsapp me-2"></i>Send Order via WhatsApp
-          </a>
-        </div>
-      `;
-      document.querySelector('#customizeModal .modal-footer').innerHTML = `
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-      `;
+      $('#cartExtras').style.display = ''; $('#cartFoot').style.display = '';
+      $('#cartLines').innerHTML = cart.map(i => `
+        <div class="line">
+          ${i.img ? `<img class="thumb" src="${i.img}" alt="" />` : `<div class="thumb">${i.icon || '🍪'}</div>`}
+          <div class="info"><b>${esc(i.name)}</b>${i.detail ? `<small>${esc(i.detail)}</small>` : ''}<div class="p">${fmt(i.price)} each</div></div>
+          <div class="stepper">
+            <button class="round light" onclick="setQty('${i.key}',-1)" aria-label="Remove one"><svg class="i"><use href="#i-${i.qty === 1 ? 'trash' : 'dash'}"/></svg></button>
+            <span class="qty">${i.qty}</span>
+            <button class="round" onclick="setQty('${i.key}',1)" aria-label="Add one"><svg class="i"><use href="#i-plus"/></svg></button>
+          </div>
+        </div>`).join('');
+      const rows = [];
+      if (t.usd) rows.push(`<div><span>Subtotal (USD)</span><span>${fmt({ usd: t.usd })}</span></div>`);
+      if (t.lbp) rows.push(`<div><span>Subtotal (LBP)</span><span>${fmt({ lbp: t.lbp })}</span></div>`);
+      rows.push(`<div class="grand"><span>Total</span><span>${totalText(t)}</span></div>`);
+      $('#totals').innerHTML = rows.join('');
     }
+
+    function sendOrder() {
+      if (!cart.length) return;
+      const t = totals();
+      const lines = cart.map(i => {
+        const what = i.type === 'mini' ? `Mini ${i.detail} cookie`
+          : i.type === 'box' ? `${i.name} (${i.detail})`
+          : i.detail ? `${i.name} with ${i.detail}` : i.name;
+        const line = i.price.usd != null ? { usd: i.price.usd * i.qty } : { lbp: i.price.lbp * i.qty };
+        return `• ${i.qty} × ${what} = ${fmt(line)}`;
+      });
+      const name = $('#custName').value.trim();
+      const notes = $('#custNotes').value.trim();
+      let msg = `Hello BIG E COOKIES! 🍪 I'd like to order:\n\n${lines.join('\n')}\n\n*Total: ${totalText(t)}*`;
+      if (name) msg += `\n\nName: ${name}`;
+      if (notes) msg += `\nNotes: ${notes}`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    }
+
+    /* ---------- layers, toast ---------- */
+    function openLayer(sel) { closeAll(true); $(sel).classList.add('open'); $('#overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function openCart() { $('#toast').classList.remove('show'); renderCart(); openLayer('#cart'); }
+    function closeAll(keepScroll) {
+      ['#picker', '#cart', '#overlay'].forEach(s => $(s).classList.remove('open'));
+      if (!keepScroll) document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+    let toastTimer;
+    function toast(text) {
+      $('#toastText').textContent = text;
+      $('#toast').classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => $('#toast').classList.remove('show'), 1800);
+    }
+
+    /* ---------- boot ---------- */
+    function renderAll() {
+      FLAVOURS.forEach(f => { const el = document.getElementById('step-' + f.id); if (el) el.innerHTML = stepperHTML(f.id); });
+      renderCart();
+    }
+    renderFlavours(); renderBoxes(); renderCroissants(); renderCart();
+    const names = FLAVOURS.map(f => `<span>${esc(f.name)}</span>`).join('') + '<span>Croissants</span><span>Mini cookies</span>';
+    $('#marquee').innerHTML = names + names;
+    $('#year').textContent = new Date().getFullYear();
+
+    const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: .12 }) : null;
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i % 3) * 80 + 'ms';
+      io ? io.observe(el) : el.classList.add('in');
+    });
   </script>
 </body>
 </html>
